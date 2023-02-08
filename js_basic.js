@@ -131,7 +131,12 @@ const personObj = {
   getNameArrow: () => {
     return "My name is " + this.name;
   },
+  getHobbies: function () {
+    return ["running", "jumping"];
+  },
 };
 
 console.log(personObj.getName());
 console.log(personObj.getNameArrow());
+const [hob, hob2] = personObj.getHobbies();
+console.log(hob, hob2);
