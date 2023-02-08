@@ -21,11 +21,6 @@ const arrayOfArray = [
   [1, 2, 3, 4, 5, 6, 7],
 ];
 
-const obj = {
-  name: "Ebere",
-  age: 485,
-};
-
 //filter, map, find
 const filteredArray = arrayOfNumber.filter(function (number) {
   return number == 2;
@@ -56,10 +51,10 @@ function greetFuncDel() {
   console.log("greet Func Del");
 }
 
-// (function () {
-//   console.log("IIFE");
-//   return {};
-// })();
+(function () {
+  console.log("IIFE");
+  return {};
+})();
 
 function greetFuncDel2() {
   return function () {
@@ -70,3 +65,46 @@ const x = greetFuncDel2();
 console.log(x());
 
 console.log(greetFuncDel2()());
+
+function funcWithParam(x, y) {
+  return x + y;
+}
+
+console.log(funcWithParam(1, 2));
+//... spread operator
+function funcWithUnlimitedParam(...x) {
+  console.log(x);
+}
+
+funcWithUnlimitedParam(1, 2, { name: "ebere", age: "sage" }, "strings", 5);
+
+//arrow function
+const arrwFunc = () => {
+  console.log("arrwFunc");
+  return "something";
+};
+console.log("arrwFunc: ", arrwFunc());
+const arrwFunc2 = () => ({ name: "ebere" });
+console.log("arrwFunc2: ", arrwFunc2());
+const obj = {
+  name: "Ebere",
+  age: 485,
+  "str age": "103",
+};
+// const finds = "name";
+// console.log(obj.name);
+// console.log(obj["str age"]);
+// console.log(obj[finds]); // bracket notation
+
+const arrayA = [1, 2, 3, 4];
+const arrayB = [1, 2, 3, 4, 5, 6, 7];
+//concat with spread operator
+// console.log([...arrayA, ...arrayB]);
+
+// console.log(obj);
+// obj.hobby = "sketch";
+// console.log({ ...obj, fun: "running" });
+// console.log({ ...obj, fun: "running", name: "America" });
+// console.log("obj after all consoles: ", obj);
+// let obj2 = { ...obj, fun: "running", name: "America" };
+// console.log("obj2: ", obj2);
