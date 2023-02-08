@@ -131,12 +131,22 @@ const personObj = {
   getNameArrow: () => {
     return "My name is " + this.name;
   },
-  getHobbies: function () {
-    return ["running", "jumping"];
-  },
+  getHobbies: () => ["Running", "Jumping"],
+  getObjDest: () => ({ name: "Running", fun: "Jumping" }),
 };
 
 console.log(personObj.getName());
-console.log(personObj.getNameArrow());
-const [hob, hob2] = personObj.getHobbies();
-console.log(hob, hob2);
+console.log(personObj.getNameArrow()); // undefined
+//destructing
+const [hob1, hob2] = personObj.getHobbies();
+console.log("hob1: ", hob1);
+console.log("hob2: ", hob2);
+
+const { name, fun } = personObj.getObjDest();
+console.log("name: ", name);
+console.log("fun: ", fun);
+
+const { name: nameOfPersonObjectKey, fun: funOfPersonObjectKey } =
+  personObj.getObjDest();
+console.log("name: ", nameOfPersonObjectKey);
+console.log("fun: ", funOfPersonObjectKey);
