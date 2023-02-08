@@ -108,3 +108,30 @@ const arrayB = [1, 2, 3, 4, 5, 6, 7];
 // console.log("obj after all consoles: ", obj);
 // let obj2 = { ...obj, fun: "running", name: "America" };
 // console.log("obj2: ", obj2);
+
+// Similar to class below
+// function Person() {
+//   this.name = "Ebere";
+// }
+
+// const person = new Person();
+// console.log(person);
+
+// class Person {
+//   constructor() {
+//     this.name = "Ebere";
+//   }
+// }
+
+const personObj = {
+  name: "Ebere",
+  getName: function () {
+    return "My name is " + this.name;
+  },
+  getNameArrow: () => {
+    return "My name is " + this.name;
+  },
+};
+
+console.log(personObj.getName());
+console.log(personObj.getNameArrow());
